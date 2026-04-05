@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import shutil
 
 # current working dictionary 
 BASE_DIR  = os.path.dirname(os.path.abspath(__file__))
@@ -74,13 +75,41 @@ def create_project(project_name):
     create_structure(project_root_path, structure_dict)
 
 def publish_versionup():
-    pass
+    version_des = "version"
+    file_path = "folder_template/assets_template.json"
+
+    os.makedirs(version_des,exist_ok=True)
+
+    base_name = os.path.basename(file_path)
+    name , ext = os.path.splitext(base_name) 
+    print(base_name)
+    print(name, ext)
+
+    # find next vewrsion number 
+    version = 1
+    while True:
+        new_name = f"{name}_V{version:03d}{ext}"
+        dest_path = os.path.join(version_des, new_name)
+
+        if not os.path.exists(dest_path):
+            break
+
+        version += 1
+
+    # copy file 
+    shutil.copy2(file_path, dest_path)
+
+    print("Crerated:", dest_path)
+        
+        
 
 if __name__ == "__main__":
 
     # Run once (setup studio)
-    build_studio()
+    # build_studio()
 
-    # Create new project
-    create_project("MyFilm")
-    create_project("MyFilm1")
+    # # Create new project
+    # create_project("MyFilm")
+    # create_project("MyFilm1")
+
+    publish_versionup()
