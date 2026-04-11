@@ -1,9 +1,10 @@
 { 
     "studio_pipeline_folder": {
-        "projects":{},
+        "projects":{},  
         "library":{},
-        "pipeline":{},
-        "renders":{},
-        "dailies":{}
+        "pipeline_tools":{},
+        "templates":{},
+        "config":{},
+        "logs":{}
     }
 } 

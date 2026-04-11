@@ -1,0 +1,12 @@
+{ 
+    "Sequences": {
+        "animation":{},
+        "layout":{},
+        "lighting":{},
+        "fx":{},
+        "comp":{},
+        "cache":{},
+        "publish":{},
+        "work":{}
+    }
+} 

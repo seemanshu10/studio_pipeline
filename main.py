@@ -74,7 +74,7 @@ def create_project(project_name):
 
     create_structure(project_root_path, structure_dict)
 
-def publish_versionup():
+def publish_versionup(version_des, file_path):
     version_des = "version"
     file_path = "folder_template/assets_template.json"
 
@@ -101,7 +101,6 @@ def publish_versionup():
 
     print("Crerated:", dest_path)
         
-        
 
 if __name__ == "__main__":
 
@@ -112,4 +111,4 @@ if __name__ == "__main__":
     # create_project("MyFilm")
     # create_project("MyFilm1")
 
-    publish_versionup()
+    publish_versionup("version", "folder_template/assets_template.json")

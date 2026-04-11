@@ -1,9 +1,11 @@
 { 
     "Project": {
-        "Assets":{},
-        "Sequences":{},
-        "Publish":{},
-        "Cache":{},
-        "renders":{}
+        "assets":{},
+        "sequences":{},
+        "dailies":{},
+        "renders":{},
+        "publish":{},
+        "work":{},
+        "config":{}
     }
 } 

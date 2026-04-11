@@ -1,0 +1,10 @@
+{ 
+    "character": {
+        "model":{},
+        "rig":{},
+        "texture":{},
+        "lookdev":{},
+        "publish":{},
+        "work":{}
+    }
+} 
