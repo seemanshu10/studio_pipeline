@@ -1,0 +1,109 @@
+# Studio_pipeline
+
+What Studio_template has :
+PROJECTS → all active projects
+LIBRARY → reusable assets (HDRI, rigs, textures)
+PIPELINE_TOOLS → your Python scripts
+TEMPLATES → folder templates
+CONFIG → naming rules, settings
+
+## Inside PROJECTS:
+
+PROJECTS/
+└── Project_Name/
+    ├── assets/
+    ├── sequences/
+    ├── shots/
+    ├── renders/
+    ├── publish/
+    └── work/
+
+## ASSET STRUCTURE (VERY IMPORTANT)
+assets/
+└── character/
+    └── hero_character/
+        ├── model/
+        ├── rig/
+        ├── texture/
+        ├── lookdev/
+        ├── publish/
+        └── work/
+
+### repeat for 
+
+- prop
+- environment 
+- vehicle
+
+## SHOT STRUCTURE (VFX STYLE)
+
+'''
+sequences/
+└── seq001/
+    └── shot010/
+        ├── animation/
+        ├── layout/
+        ├── lighting/
+        ├── fx/
+        ├── comp/
+        ├── cache/
+        ├── publish/
+        └── work/
+
+'''
+
+## Inside assets:
+
+environment/
+└── building_A/
+    ├── high/
+    ├── mid/
+    ├── low/
+    ├── textures/
+    ├── engine/
+    └── publish/
+
+
+#### Rules
+- work = editable
+- Publish = locked 
+
+- This Is the folder structure for this pipleine we have . 
+
+### Main Features 
+
+- This Tools Creates the whole folder structure that is defined in json 
+- This should be run as a CLI tools 
+- Right now no DB so will simulate the DB with json . 
+- work Folder where temp file and working files can be saved by artists 
+- Simulate a publish button so the files are saved in publish folder structure these file can be only read not overwritten 
+- Publish files shot_010_001_v001 so this is the naming structure for thhese publish files . 
+- A log file which stores all the commands in the system .
+
+### 
+
+- Also this cli pipelineTool should handle a whole json template with all the templates in one json  file 
+
+## Publish rules 
+
+Publish System 
+Naming Rule:
+shot010_animation_v001.ma
+shot010_animation_v002.ma
+Steps:
+Validate THe Files if the format is correct 
+Detect latest version in publish/
+Increment version
+Copy file
+Lock it (read-only)
+Log action
+
+
+Locking Strategy
+
+Instead of just chmod:
+
+Better approach:
+Keep publish folders read-only
+Artists NEVER write there directly
+Only CLI tool writes

@@ -1,0 +1,46 @@
+Title : OpenSource Studio Pipeline 
+Objective :  It solves and handles the daily day to day working and problems that arises. Handles all the asset creation , shot creation and all the other features related to it. 
+Target users : A VFX Studio Pipeline Which is easy to set up on any environment whether it is small or larger teams.
+
+Main Features: 
+- The pipeline is easy to set up . 
+- Is scalable 
+
+features : 
+1. The folder creations is handled by json tempelate file. 
+2. there is a publish simulation where the files are publuished into the published folder they cannot be ovewritten they only create when publish. 
+3. It should also handle all the edge cases .
+
+Tools : 
+Python version 
+json for storage of data 
+
+
+Main core Logic: 
+
+A System Which creates a Studio pipeline with all the necessary folders using both the folder template files and the data that the pipeline TD or user gives 
+
+What Studio_template has :
+PROJECTS → all active projects and created projects
+LIBRARY → reusable assets (HDRI, rigs, textures)
+PIPELINE_TOOLS → your Python scripts
+TEMPLATES → folder templates (All the json template file)
+CONFIG → naming rules, settings, constants 
+
+LOGIC/Backend - 
+This Is a Cli Tool can also handle running from .bat commands
+
+To initialize The Pipeline in the system it can be setup once accorfing to template. 
+And Then multiple projects can be created according to template.json  
+And Then All the other assets, their dependencies can be created. 
+
+- Also Each Publish file will automatically find what the last version is published and increment the file which means version up the file. 
+
+UI Frontend 
+It can Get the project name, asset name , from the user through UI . Which feeds into the system. 
+Publish putton which gets the file that needs to published.
+
+
+
+
+

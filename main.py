@@ -74,6 +74,23 @@ def create_project(project_name):
 
     create_structure(project_root_path, structure_dict)
 
+def create_assets(project_name):
+    """
+    Initialize assets  
+    D:\PipelineTD\studio_pipeline\folder_template\assets_template.json
+    """
+    asset_template_path  = os.path.join(TEMPLATE_DIR, "assets_template.json")
+    asset_template_folders = load_json_data(asset_template_path)
+    print(asset_template_path)
+    print(asset_template_folders)
+
+    asset_root_path = os.path.join(PIPELINE_ROOT, "projects", project_name)
+    print(asset_root_path)
+    # os.makedirs(asset_root_path, exist_ok=True)
+    structure_dict = asset_template_folders["Assets"]
+    print(structure_dict)
+    # create_structure(asset_root_path, structure_dict)
+
 def publish_versionup(version_des, file_path):
     version_des = "version"
     file_path = "folder_template/assets_template.json"
@@ -98,17 +115,16 @@ def publish_versionup(version_des, file_path):
 
     # copy file 
     shutil.copy2(file_path, dest_path)
-
-    print("Crerated:", dest_path)
-        
+    print("Created:", dest_path)
 
 if __name__ == "__main__":
 
     # Run once (setup studio)
     # build_studio()
 
-    # # Create new project
+    # Create new project
     # create_project("MyFilm")
     # create_project("MyFilm1")
 
-    publish_versionup("version", "folder_template/assets_template.json")
+    # publish_versionup("version", "folder_template/assets_template.json")
+    create_assets("MyFilm")
